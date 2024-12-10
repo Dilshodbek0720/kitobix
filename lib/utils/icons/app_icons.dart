@@ -33,7 +33,7 @@ class AppIcons {
   static const String signIn = "assets/images/sign_in.png";
   static const String splashScreen = "assets/images/splash_screen.png";
   static const String successPassword = "assets/images/success_password.png";
-  static const String taxiLogo = "assets/images/taxi_logo.png";
+  static const String bookLogo = "assets/images/book_logo.png";
   static const String uzbFlag = "assets/images/uzb.png";
   static const String fromTo = "assets/images/from_to.png";
   static const String humoPng = "assets/images/humo_card.png";

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kitobix/main.dart';
+import 'package:kitobix/ui/app_routes.dart';
 import 'package:kitobix/ui/on_boarding/carousel_pages/widgets/page_view_icon_index.dart';
 import 'package:kitobix/ui/on_boarding/carousel_pages/widgets/page_view_item.dart';
 import 'package:kitobix/ui/widgets/global_button.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
-import 'package:kitobix/utils/size/screen_size.dart';
 import 'package:kitobix/utils/size/size_extension.dart';
-import 'package:kitobix/utils/theme/get_theme.dart';
 
 class OnBoardingPages extends StatefulWidget {
   const OnBoardingPages({super.key});
@@ -84,12 +82,12 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
                     }
                     if (pageIndex == 2) {
                       // await StorageRepository.putBool(StorageKeys.welcomeDone, true);
-                      // if (context.mounted) {
-                      //   Navigator.pushReplacementNamed(
-                      //     context,
-                      //     RouteNames.letsIn,
-                      //   );
-                      // }
+                      if (context.mounted) {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          RouteNames.signInScreen,
+                        );
+                      }
                     }
                   },
                 ),

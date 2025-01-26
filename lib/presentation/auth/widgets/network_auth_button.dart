@@ -19,8 +19,8 @@ class NetworkAuthButton extends StatelessWidget {
       ),
         child: Padding(padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 32.w),
           child: SizedBox(
-            height: 16.h,
-            width: 16.h,
+            height: 24.h,
+            width: 24.h,
             child: icon,
           ),
         ),

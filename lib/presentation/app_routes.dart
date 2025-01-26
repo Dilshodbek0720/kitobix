@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:kitobix/ui/auth/sign_in/sign_in_screen.dart';
-import 'package:kitobix/ui/on_boarding/carousel_pages/on_boarding_pages.dart';
-import 'package:kitobix/ui/splash/splash_screen.dart';
+import 'package:kitobix/presentation/auth/sign_in/sign_in_screen.dart';
+import 'package:kitobix/presentation/auth/sign_up/sign_up_screen.dart';
+import 'package:kitobix/presentation/on_boarding/carousel_pages/on_boarding_pages.dart';
+import 'package:kitobix/presentation/splash/splash_screen.dart';
+import 'package:kitobix/presentation/tab_box/tab_box.dart';
 
 class RouteNames {
   static const String splashScreen = "/";
   static const String onBoardingScreen = "/on_boarding";
   static const String signInScreen = "/sign_in_screen";
+  static const String signUpScreen = "/sign_up_screen";
+  static const String tabBox = "/tab_box";
 }
 
 class AppRoutes {
@@ -23,6 +27,14 @@ class AppRoutes {
       case RouteNames.signInScreen:
         return MaterialPageRoute(
             builder: (context) => const SignInScreen()
+        );
+      case RouteNames.signUpScreen:
+        return MaterialPageRoute(
+            builder: (context) => const SignUpScreen()
+        );
+      case RouteNames.tabBox:
+        return MaterialPageRoute(
+            builder: (context) => const TabBox()
         );
       default:
         return MaterialPageRoute(

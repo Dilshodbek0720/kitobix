@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kitobix/ui/auth/widgets/auth_navigation_button.dart';
-import 'package:kitobix/ui/auth/widgets/auth_text_field.dart';
-import 'package:kitobix/ui/auth/widgets/custom_appbar.dart';
-import 'package:kitobix/ui/auth/widgets/network_auth_button.dart';
-import 'package:kitobix/ui/auth/widgets/text_widget.dart';
-import 'package:kitobix/ui/widgets/global_button.dart';
+import 'package:kitobix/presentation/app_routes.dart';
+import 'package:kitobix/presentation/auth/widgets/auth_navigation_button.dart';
+import 'package:kitobix/presentation/auth/widgets/auth_text_field.dart';
+import 'package:kitobix/presentation/auth/widgets/custom_appbar.dart';
+import 'package:kitobix/presentation/auth/widgets/network_auth_button.dart';
+import 'package:kitobix/presentation/auth/widgets/text_widget.dart';
+import 'package:kitobix/presentation/widgets/global_button.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
 import 'package:kitobix/utils/size/screen_size.dart';
@@ -107,7 +108,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     24.ph,
                     AuthNavigatorButton(title: "Don’t have an account?", onTap: (){
-                      // Navigator.pushReplacementNamed(context, RouteNames.signUp);
+                      Navigator.pushReplacementNamed(context, RouteNames.signUpScreen);
                     }, onTapTitle: "Sign up"),
                     // const Spacer(),
                   ],

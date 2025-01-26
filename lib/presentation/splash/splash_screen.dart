@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kitobix/ui/app_routes.dart';
+import 'package:kitobix/data/local/storage_repository.dart';
+import 'package:kitobix/presentation/app_routes.dart';
+import 'package:kitobix/utils/constants/storage_keys.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
 import 'package:kitobix/utils/size/screen_size.dart';
 
@@ -21,8 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _init() async {
     await Future.delayed(const Duration(seconds: 1));
-    if (context.mounted) {
-      Navigator.pushReplacementNamed(context, RouteNames.onBoardingScreen);
+    if (mounted) {
+      StorageRepository.getString(StorageKeys.userId).isEmpty ? Navigator.pushReplacementNamed(context, RouteNames.onBoardingScreen) :
+      Navigator.pushReplacementNamed(context, RouteNames.tabBox);
     }
   }
 

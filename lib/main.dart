@@ -1,11 +1,20 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kitobix/ui/app_routes.dart';
+import 'package:kitobix/cubits/auth/auth_cubit.dart';
+import 'package:kitobix/data/local/storage_repository.dart';
+import 'package:kitobix/data/repositories/auth_repository.dart';
+import 'package:kitobix/presentation/app_routes.dart';
 import 'package:kitobix/utils/size/screen_size.dart';
 import 'package:kitobix/utils/theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await StorageRepository.getInstance();
   runApp(const App());
 }
 
@@ -14,10 +23,25 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyApp();
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider(
+          create: (context) => AuthRepository(),
+        ),
+      ],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => AuthCubit(
+              context.read<AuthRepository>(),
+            ),
+          ),
+        ],
+        child: const MyApp(),
+      ),
+    );
   }
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -28,20 +52,20 @@ class MyApp extends StatelessWidget {
       designSize: Size(figmaWidth, figmaHeight),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child){
+      builder: (context, child) {
         return AdaptiveTheme(
-            light: AppTheme.lightTheme,
-            dark: AppTheme.darkTheme,
-            initial: AdaptiveThemeMode.system,
-            builder: (theme, darkTheme){
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: theme,
-                darkTheme: darkTheme,
-                initialRoute: RouteNames.splashScreen,
-                onGenerateRoute: AppRoutes.generateRoute,
-              );
-        },
+          light: AppTheme.lightTheme,
+          dark: AppTheme.darkTheme,
+          initial: AdaptiveThemeMode.system,
+          builder: (theme, darkTheme) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: theme,
+              darkTheme: darkTheme,
+              initialRoute: RouteNames.splashScreen,
+              onGenerateRoute: AppRoutes.generateRoute,
+            );
+          },
         );
       },
     );

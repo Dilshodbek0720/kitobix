@@ -8,7 +8,6 @@ class AppIcons {
   static const String drFake4 = "assets/images/fake_images/dr_fake4.png";
   static const String drFake5 = "assets/images/fake_images/dr_fake5.png";
 
-
   // images
 
   static const String myLocation = "assets/images/my_location.png";
@@ -17,7 +16,8 @@ class AppIcons {
   static const String taxiLogotip = "assets/images/taxi_logotip.png";
   static const String mapAtBooking = "assets/images/map_at_booking.png";
   static const String emptyBookings = "assets/images/empty_bookings.png";
-  static const String emptyBookingsDark = "assets/images/empty_bookings_dark.png";
+  static const String emptyBookingsDark =
+      "assets/images/empty_bookings_dark.png";
   static const String testAvatar = "assets/images/test_avatar.png";
   static const String barcode = "assets/images/barcode.png";
   static const String emptyProfile = "assets/images/empty_profile.png";
@@ -26,7 +26,8 @@ class AppIcons {
   static const String onBoarding1 = "assets/images/on_boarding1.png";
   static const String onBoarding2 = "assets/images/on_boarding2.png";
   static const String onBoarding3 = "assets/images/on_boarding3.png";
-  static const String onBoardingBackground = "assets/images/onboarding_background.png";
+  static const String onBoardingBackground =
+      "assets/images/onboarding_background.png";
   static const String onBoardingDark1 = "assets/images/on_boarding_dark1.png";
   static const String onBoardingDark2 = "assets/images/on_boarding_dark2.png";
   static const String onBoardingDark3 = "assets/images/on_boarding_dark3.png";
@@ -215,11 +216,11 @@ class AppIcons {
   static const String unSelected = "assets/svg/others/unselected.svg";
   static const String sideCancel = "assets/svg/others/side_cancel.svg";
   static const String cancel = "assets/svg/others/cancel.svg";
-  static const String bike='assets/svg/others/catgory_bike.svg';
-  static const String premium='assets/svg/others/premium.svg';
-  static const String standard='assets/svg/others/standard.svg';
-  static const String circle='assets/svg/others/circle.svg';
-  static const String circleTwo='assets/svg/others/circle_two.svg';
+  static const String bike = 'assets/svg/others/catgory_bike.svg';
+  static const String premium = 'assets/svg/others/premium.svg';
+  static const String standard = 'assets/svg/others/standard.svg';
+  static const String circle = 'assets/svg/others/circle.svg';
+  static const String circleTwo = 'assets/svg/others/circle_two.svg';
   static const String frame = "assets/svg/others/fram.svg";
   static const String rateStarUser = "assets/svg/others/rate_star_quser.svg";
   static const String rateStar = "assets/svg/others/rate_star.svg";
@@ -227,55 +228,74 @@ class AppIcons {
   static const String visa = "assets/svg/others/visa.svg";
   static const String humo = "assets/svg/others/humo.svg";
   static const String uzCard = "assets/svg/others/uzCard.svg";
-  static const String arrowDownTwo="assets/svg/others/arrow_down2.svg";
-  static const String copyTransaction = "assets/svg/others/copy_transaction.svg";
+  static const String arrowDownTwo = "assets/svg/others/arrow_down2.svg";
+  static const String copyTransaction =
+      "assets/svg/others/copy_transaction.svg";
 
   //help_screen_social_icons
-  static const String head="assets/svg/others/help_screen_head.svg";
-  static const String instagram="assets/svg/others/help_screen_instagram.svg";
-  static const String twitter="assets/svg/others/help_screen_twitter.svg";
-  static const String web="assets/svg/others/help_screen_web.svg";
-  static const String whatsapp="assets/svg/others/help_screen_whatsapp.svg";
-  static const String helpfacebook="assets/svg/others/help_scren_facebook.svg";
-
+  static const String head = "assets/svg/others/help_screen_head.svg";
+  static const String instagram = "assets/svg/others/help_screen_instagram.svg";
+  static const String twitter = "assets/svg/others/help_screen_twitter.svg";
+  static const String web = "assets/svg/others/help_screen_web.svg";
+  static const String whatsapp = "assets/svg/others/help_screen_whatsapp.svg";
+  static const String helpfacebook =
+      "assets/svg/others/help_scren_facebook.svg";
 
   // additional icons
   static const String bank = "assets/svg/additional_icons/bank.svg";
   static const String bike2 = "assets/svg/additional_icons/bike.svg";
   static const String building = "assets/svg/additional_icons/building.svg";
-  static const String buildingBold = "assets/svg/additional_icons/building_bold.svg";
-  static const String buildingHouse = "assets/svg/additional_icons/building_house.svg";
-  static const String buildingHouseBold = "assets/svg/additional_icons/building_house_bold.svg";
+  static const String buildingBold =
+      "assets/svg/additional_icons/building_bold.svg";
+  static const String buildingHouse =
+      "assets/svg/additional_icons/building_house.svg";
+  static const String buildingHouseBold =
+      "assets/svg/additional_icons/building_house_bold.svg";
   static const String carWifi = "assets/svg/additional_icons/car_wifi.svg";
   static const String card = "assets/svg/additional_icons/card.svg";
   static const String copyAlt = "assets/svg/additional_icons/copy_alt.svg";
-  static const String copyAltBold = "assets/svg/additional_icons/copy_alt_bold.svg";
-  static const String currentLocation = "assets/svg/additional_icons/current_location.svg";
-  static const String dollarCircle = "assets/svg/additional_icons/dollar_circle.svg";
-  static const String dollarCircleBold = "assets/svg/additional_icons/dollar_circle_bold.svg";
-  static const String editLocation = "assets/svg/additional_icons/edit_location.svg";
+  static const String copyAltBold =
+      "assets/svg/additional_icons/copy_alt_bold.svg";
+  static const String currentLocation =
+      "assets/svg/additional_icons/current_location.svg";
+  static const String dollarCircle =
+      "assets/svg/additional_icons/dollar_circle.svg";
+  static const String dollarCircleBold =
+      "assets/svg/additional_icons/dollar_circle_bold.svg";
+  static const String editLocation =
+      "assets/svg/additional_icons/edit_location.svg";
   static const String link = "assets/svg/additional_icons/link.svg";
   static const String linkAlt = "assets/svg/additional_icons/link_alt.svg";
   static const String listUi = "assets/svg/additional_icons/list_ui.svg";
-  static const String locationPlus = "assets/svg/additional_icons/location_plus.svg";
-  static const String locationPlusBold = "assets/svg/additional_icons/location_plus_bold.svg";
+  static const String locationPlus =
+      "assets/svg/additional_icons/location_plus.svg";
+  static const String locationPlusBold =
+      "assets/svg/additional_icons/location_plus_bold.svg";
   static const String mapAlt = "assets/svg/additional_icons/map_alt.svg";
-  static const String mapAltBold = "assets/svg/additional_icons/map_alt_bold.svg";
+  static const String mapAltBold =
+      "assets/svg/additional_icons/map_alt_bold.svg";
   static const String mapPin = "assets/svg/additional_icons/map_pin.svg";
-  static const String mapPinBold = "assets/svg/additional_icons/map_pin_bold.svg";
+  static const String mapPinBold =
+      "assets/svg/additional_icons/map_pin_bold.svg";
   static const String menu = "assets/svg/additional_icons/menu.svg";
   static const String minus = "assets/svg/additional_icons/minus.svg";
-  static const String minusCircle = "assets/svg/additional_icons/minus_circle.svg";
+  static const String minusCircle =
+      "assets/svg/additional_icons/minus_circle.svg";
   static const String money = "assets/svg/additional_icons/money.svg";
   static const String navigation = "assets/svg/additional_icons/navigation.svg";
-  static const String navigationBold = "assets/svg/additional_icons/navigation_bold.svg";
-  static const String plusAdditional = "assets/svg/additional_icons/plus_additional.svg";
-  static const String plusCircle = "assets/svg/additional_icons/plus_circle.svg";
+  static const String navigationBold =
+      "assets/svg/additional_icons/navigation_bold.svg";
+  static const String plusAdditional =
+      "assets/svg/additional_icons/plus_additional.svg";
+  static const String plusCircle =
+      "assets/svg/additional_icons/plus_circle.svg";
   static const String taxi = "assets/svg/additional_icons/taxi.svg";
   static const String taxiBold = "assets/svg/additional_icons/taxi_bold.svg";
   static const String xClose = "assets/svg/additional_icons/x_close.svg";
-  static const String xCloseCircle = "assets/svg/additional_icons/x_close_circle.svg";
-  static const String xCloseCircleBold = "assets/svg/additional_icons/x_close_circle_bold.svg";
+  static const String xCloseCircle =
+      "assets/svg/additional_icons/x_close_circle.svg";
+  static const String xCloseCircleBold =
+      "assets/svg/additional_icons/x_close_circle_bold.svg";
 
   static const String blueOffer = "assets/svg/others/blue_offer.svg";
   static const String greenOffer = "assets/svg/others/green_offer.svg";

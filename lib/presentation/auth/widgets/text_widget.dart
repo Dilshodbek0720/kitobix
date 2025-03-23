@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
-import 'package:kitobix/utils/size/size_extension.dart';
 
 class TextWidget extends StatelessWidget {
   const TextWidget({super.key, required this.title});
@@ -9,7 +8,8 @@ class TextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title,
+    return Text(
+      title,
       textAlign: TextAlign.start,
       style: TextStyle(
         color: AppColors.neutral80,

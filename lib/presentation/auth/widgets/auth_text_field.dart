@@ -17,6 +17,7 @@ class AuthTextField extends StatefulWidget {
 
   final String hintText;
   final String? parolkoz;
+
   // final String prefixIcon;
   final FocusNode focusNode;
   final bool isPassword;
@@ -80,8 +81,10 @@ class _AuthTextFieldState extends State<AuthTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      keyboardType: widget.isPassword ? TextInputType.text : TextInputType.emailAddress,
-      textInputAction: widget.isPassword ? TextInputAction.done : TextInputAction.go,
+      keyboardType:
+          widget.isPassword ? TextInputType.text : TextInputType.emailAddress,
+      textInputAction:
+          widget.isPassword ? TextInputAction.done : TextInputAction.go,
       focusNode: widget.focusNode,
       controller: _controller,
       obscureText: widget.parolkoz == null ? _isObscured : !_isObscured,
@@ -93,11 +96,11 @@ class _AuthTextFieldState extends State<AuthTextField> {
           fontFamily: "Urbanist",
           fontStyle: FontStyle.normal,
           fontWeight: FontWeight.w600,
-          letterSpacing: 0.2
-      ),
+          letterSpacing: 0.2),
       decoration: InputDecoration(
           counterText: "",
-          contentPadding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h, bottom: 20.h),
+          contentPadding:
+              EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h, bottom: 20.h),
           hintText: widget.hintText,
           hintStyle: TextStyle(
               overflow: TextOverflow.ellipsis,
@@ -106,19 +109,18 @@ class _AuthTextFieldState extends State<AuthTextField> {
               fontFamily: "Urbanist",
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w400,
-              letterSpacing: 0.2
-          ),
+              letterSpacing: 0.2),
           suffixIcon: widget.isPassword
               ? IconButton(
-              onPressed: () {
-                setState(() {
-                  _isObscured = !_isObscured;
-                });
-              },
-              icon: SvgPicture.asset(
-                _isObscured ? AppIcons.show : AppIcons.hide,
-                colorFilter: ColorFilter.mode(_iconColor, BlendMode.srcIn),
-              ))
+                  onPressed: () {
+                    setState(() {
+                      _isObscured = !_isObscured;
+                    });
+                  },
+                  icon: SvgPicture.asset(
+                    _isObscured ? AppIcons.show : AppIcons.hide,
+                    colorFilter: ColorFilter.mode(_iconColor, BlendMode.srcIn),
+                  ))
               : const SizedBox(),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),

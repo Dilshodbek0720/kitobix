@@ -13,11 +13,6 @@ class AuthCubit extends Cubit<AuthState> {
 
   final AuthRepository authRepository;
 
-  void updateEmail(String email) {
-    debugPrint("AUTH EMAIL: $email");
-    emit(state.copyWith(email: email));
-  }
-
   Future<void> signUp(context) async {
     emit(state.copyWith(status: FormStatus.loading));
     showLoading(context: context);
@@ -58,5 +53,15 @@ class AuthCubit extends Cubit<AuthState> {
       );
     }
     emit(state.copyWith(status: FormStatus.pure));
+  }
+
+  void updateEmail(String email) {
+    debugPrint("AUTH EMAIL: $email");
+    emit(state.copyWith(email: email));
+  }
+
+  void updatePassword(String password) {
+    debugPrint("AUTH PASSWORD: $password");
+    emit(state.copyWith(password: password));
   }
 }

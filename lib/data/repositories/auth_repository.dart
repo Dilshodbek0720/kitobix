@@ -26,7 +26,7 @@ class AuthRepository {
   }) async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );

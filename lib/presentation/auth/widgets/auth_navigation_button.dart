@@ -4,8 +4,10 @@ import 'package:kitobix/utils/colors/app_colors.dart';
 
 class AuthNavigatorButton extends StatelessWidget {
   const AuthNavigatorButton(
-      {Key? key, required this.title, required this.onTap, required this.onTapTitle})
-      : super(key: key);
+      {super.key,
+      required this.title,
+      required this.onTap,
+      required this.onTapTitle});
 
   final String title;
   final String onTapTitle;

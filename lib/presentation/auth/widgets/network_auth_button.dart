@@ -13,11 +13,13 @@ class NetworkAuthButton extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(8.r),
       onTap: onTap,
-      child: DecoratedBox(decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: AppColors.neutral50, width: 1),
-      ),
-        child: Padding(padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 32.w),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(color: AppColors.neutral50, width: 1),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 32.w),
           child: SizedBox(
             height: 24.h,
             width: 24.h,

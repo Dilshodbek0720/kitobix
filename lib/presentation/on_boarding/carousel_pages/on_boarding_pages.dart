@@ -18,7 +18,6 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
   int pageIndex = 0;
   final PageController pageController = PageController();
 
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -26,47 +25,49 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(height: height, width: width, child: Image.asset(AppIcons.onBoardingBackground),),
+          SizedBox(
+            height: height,
+            width: width,
+            child: Image.asset(AppIcons.onBoardingBackground),
+          ),
           Column(
             children: [
-              Expanded(child: PageView(
-                onPageChanged: (index){
-                  setState(() {
-                    pageIndex = index;
-                  });
-                },
-                controller: pageController,
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: const [
-                  PageViewItem(
-                    title:
-                    "Biz bilan maroqli mutola!",
-                    img: AppIcons.onBoarding1,
-                  ),
-                  PageViewItem(
-                    title:
-                    "Yangidan yangi kitoblar!",
-                    img: AppIcons.onBoarding2,
-                  ),
-                  PageViewItem(
-                    title:
-                    "Hozirdan tinglashni boshlang!",
-                    img: AppIcons.onBoarding3,
-                  ),
-                ],
-              ),
+              Expanded(
+                child: PageView(
+                  onPageChanged: (index) {
+                    setState(() {
+                      pageIndex = index;
+                    });
+                  },
+                  controller: pageController,
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    PageViewItem(
+                      title: "Biz bilan maroqli mutola!",
+                      img: AppIcons.onBoarding1,
+                    ),
+                    PageViewItem(
+                      title: "Yangidan yangi kitoblar!",
+                      img: AppIcons.onBoarding2,
+                    ),
+                    PageViewItem(
+                      title: "Hozirdan tinglashni boshlang!",
+                      img: AppIcons.onBoarding3,
+                    ),
+                  ],
+                ),
               ),
               PageIndexItem(activePageIndex: pageIndex),
               20.ph,
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: width/16,
-                  vertical: width/16,
+                  horizontal: width / 16,
+                  vertical: width / 16,
                 ),
                 child: GlobalButton(
                   color: AppColors.primary50,
-                  title: pageIndex != 2 ?  "Next" : "Lets Get Started",
+                  title: pageIndex != 2 ? "Next" : "Lets Get Started",
                   radius: 16,
                   textColor: AppColors.white,
                   onTap: () async {

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "450157176563",
+    "project_id": "kitobix",
+    "storage_bucket": "kitobix.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450157176563:android:8a9118a97c9802ef81b986",
+        "android_client_info": {
+          "package_name": "com.example.kitobix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450157176563-6542dtuhec1j5i8ob7u6jah07f5rrafn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcj9gn9cWxwc_ZFMmi_psDWExnWz_QSzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450157176563-6542dtuhec1j5i8ob7u6jah07f5rrafn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450157176563:android:fb4f6252754d887f81b986",
+        "android_client_info": {
+          "package_name": "kitobix.uz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450157176563-6542dtuhec1j5i8ob7u6jah07f5rrafn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcj9gn9cWxwc_ZFMmi_psDWExnWz_QSzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450157176563-6542dtuhec1j5i8ob7u6jah07f5rrafn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

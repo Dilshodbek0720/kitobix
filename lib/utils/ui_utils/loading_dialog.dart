@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
 import 'package:lottie/lottie.dart';
 
-
-
 void showLoading({required BuildContext context}) {
   showDialog(
     context: context,
@@ -16,7 +14,7 @@ void showLoading({required BuildContext context}) {
         child: Container(
           alignment: AlignmentDirectional.center,
           decoration: const BoxDecoration(),
-          child:  Center(
+          child: Center(
             child: SizedBox(
               height: 200.h,
               width: 200.w,

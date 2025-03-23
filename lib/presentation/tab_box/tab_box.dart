@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kitobix/cubits/tab/tab_cubit.dart';
-import 'package:kitobix/data/models/icon/icon_type.dart';
 import 'package:kitobix/presentation/tab_box/home/home_screen.dart';
 import 'package:kitobix/presentation/tab_box/library/library_screen.dart';
 import 'package:kitobix/presentation/tab_box/search/search_screen.dart';
@@ -77,7 +76,6 @@ class _TabBoxState extends State<TabBox> {
       activeIcon: SvgPicture.asset(
         AppIcons.getSvg(
           name: icon,
-          iconType: IconType.bold,
         ),
         colorFilter: const ColorFilter.mode(
           AppColors.primary,

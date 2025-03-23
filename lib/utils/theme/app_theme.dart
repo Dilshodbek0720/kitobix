@@ -8,7 +8,6 @@ class AppTheme {
   //LIGHT
 
   static ThemeData lightTheme = ThemeData(
-
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor: const WidgetStatePropertyAll(AppColors.primary),
@@ -41,7 +40,7 @@ class AppTheme {
         ),
       ),
       textTheme: TextTheme(
-        //display
+          //display
           displayLarge: AppTextStyle.h1Bold.copyWith(color: AppColors.c_900),
           displayMedium: AppTextStyle.h2Bold.copyWith(color: AppColors.c_900),
           displaySmall: AppTextStyle.h3Bold.copyWith(color: AppColors.c_900),
@@ -68,14 +67,14 @@ class AppTheme {
               fontWeight: FontWeight.w500,
               fontFamily: 'Urbanist'),
           labelSmall:
-          AppTextStyle.bodyXsmallMedium.copyWith(color: AppColors.c_900),
+              AppTextStyle.bodyXsmallMedium.copyWith(color: AppColors.c_900),
           //body
           bodyLarge:
-          AppTextStyle.bodyLargeMedium.copyWith(color: AppColors.c_900),
+              AppTextStyle.bodyLargeMedium.copyWith(color: AppColors.c_900),
           bodyMedium:
-          AppTextStyle.bodyMediumMedium.copyWith(color: AppColors.c_900),
+              AppTextStyle.bodyMediumMedium.copyWith(color: AppColors.c_900),
           bodySmall:
-          AppTextStyle.bodySmallMedium.copyWith(color: AppColors.c_900)),
+              AppTextStyle.bodySmallMedium.copyWith(color: AppColors.c_900)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: true,
@@ -142,12 +141,12 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         surface: Color(0xFF1F222A),
-        background: Color(0xFF1F222A),
+        surfaceContainer: Color(0xFF1F222A),
         error: AppColors.error,
         onPrimary: Color(0xFFFFFFFF),
         onSecondary: Color(0xFFFFFFFF),
         onSurface: Color(0xff3b2948),
-        onBackground: AppColors.dark3,
+        onSurfaceVariant: AppColors.dark3,
         onError: Color(0xff690005),
         brightness: Brightness.dark,
       ),
@@ -163,8 +162,8 @@ class AppTheme {
         labelColor: AppColors.primary,
         labelStyle: AppTextStyle.bodyXlargeSemibold,
       ),
-      dropdownMenuTheme:  DropdownMenuThemeData(
-        menuStyle:  const MenuStyle(
+      dropdownMenuTheme: DropdownMenuThemeData(
+        menuStyle: const MenuStyle(
           backgroundColor: WidgetStatePropertyAll(AppColors.white),
         ),
         textStyle: TextStyle(
@@ -172,12 +171,8 @@ class AppTheme {
             fontWeight: FontWeight.w600,
             letterSpacing: 0.2,
             fontFamily: "Urbanist",
-            color: AppColors.c_800
-
-        ),
-
-      )
-  );
+            color: AppColors.c_800),
+      ));
 
   //DARK
 
@@ -192,13 +187,13 @@ class AppTheme {
       dividerTheme: const DividerThemeData(color: AppColors.dark3),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: const WidgetStatePropertyAll(AppColors.primary),
-            overlayColor: const WidgetStatePropertyAll(AppColors.secondary),
-            shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-              side: const BorderSide(color: AppColors.dark2),
-            )),
-          )),
+        backgroundColor: const WidgetStatePropertyAll(AppColors.primary),
+        overlayColor: const WidgetStatePropertyAll(AppColors.secondary),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: AppColors.dark2),
+        )),
+      )),
       scaffoldBackgroundColor: AppColors.neutral100,
       iconTheme: const IconThemeData(color: AppColors.white),
       appBarTheme: AppBarTheme(
@@ -221,7 +216,7 @@ class AppTheme {
       ),
       textTheme: TextTheme(
 
-        //display
+          //display
           displayLarge: AppTextStyle.h1Bold.copyWith(color: AppColors.white),
           displayMedium: AppTextStyle.h2Bold.copyWith(color: AppColors.white),
           displaySmall: AppTextStyle.h3Bold.copyWith(color: AppColors.white),
@@ -231,7 +226,7 @@ class AppTheme {
           //title
           titleLarge: AppTextStyle.h6Bold.copyWith(color: AppColors.white),
           titleMedium:
-          AppTextStyle.bodyXlargeMedium.copyWith(color: AppColors.white),
+              AppTextStyle.bodyXlargeMedium.copyWith(color: AppColors.white),
           titleSmall: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
@@ -249,14 +244,14 @@ class AppTheme {
               fontWeight: FontWeight.w500,
               fontFamily: 'Urbanist'),
           labelSmall:
-          AppTextStyle.bodyXsmallMedium.copyWith(color: AppColors.white),
+              AppTextStyle.bodyXsmallMedium.copyWith(color: AppColors.white),
           //body
           bodyLarge:
-          AppTextStyle.bodyLargeSemibold.copyWith(color: AppColors.white),
+              AppTextStyle.bodyLargeSemibold.copyWith(color: AppColors.white),
           bodyMedium:
-          AppTextStyle.bodyMediumSemibold.copyWith(color: AppColors.white),
+              AppTextStyle.bodyMediumSemibold.copyWith(color: AppColors.white),
           bodySmall:
-          AppTextStyle.bodySmallMedium.copyWith(color: AppColors.white)),
+              AppTextStyle.bodySmallMedium.copyWith(color: AppColors.white)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: true,
@@ -308,21 +303,21 @@ class AppTheme {
               letterSpacing: 0.2)),
       useMaterial3: false,
       switchTheme: const SwitchThemeData(
-        // thumbColor: MaterialStatePropertyAll(AppColors.white),
-        // trackColor: MaterialStatePropertyAll(AppColors.white),
-        // trackOutlineColor: MaterialStatePropertyAll(AppColors.primary),
-        // overlayColor: MaterialStatePropertyAll(AppColors.primary),
-      ),
+          // thumbColor: MaterialStatePropertyAll(AppColors.white),
+          // trackColor: MaterialStatePropertyAll(AppColors.white),
+          // trackOutlineColor: MaterialStatePropertyAll(AppColors.primary),
+          // overlayColor: MaterialStatePropertyAll(AppColors.primary),
+          ),
       colorScheme: const ColorScheme(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         surface: Color(0xFF1F222A),
-        background: Color(0xFF1F222A),
+        surfaceContainer: Color(0xFF1F222A),
         error: AppColors.error,
         onPrimary: Color(0xFFFFFFFF),
         onSecondary: Color(0xFFFFFFFF),
         onSurface: Color(0xff3b2948),
-        onBackground: AppColors.white,
+        onSurfaceVariant: AppColors.white,
         onError: Color(0xff690005),
         brightness: Brightness.dark,
       ),
@@ -338,17 +333,14 @@ class AppTheme {
         labelColor: AppColors.primary,
         labelStyle: AppTextStyle.bodyXlargeSemibold,
       ),
-      dropdownMenuTheme:  DropdownMenuThemeData(
+      dropdownMenuTheme: DropdownMenuThemeData(
         menuStyle: const MenuStyle(
-            backgroundColor: WidgetStatePropertyAll(AppColors.dark2)
-        ),
+            backgroundColor: WidgetStatePropertyAll(AppColors.dark2)),
         textStyle: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.2,
             fontFamily: "Urbanist",
-            color: AppColors.c_100
-        ),
-      )
-  );
+            color: AppColors.c_100),
+      ));
 }

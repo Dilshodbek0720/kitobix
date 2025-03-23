@@ -37,7 +37,7 @@ class GlobalButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius),
             boxShadow: [
               BoxShadow(
-                  color: AppColors.primary.withOpacity(0.3),
+                  color: AppColors.primary.withValues(alpha: 0.3),
                   blurRadius: 17,
                   spreadRadius: -7,
                   offset: const Offset(0, 6))

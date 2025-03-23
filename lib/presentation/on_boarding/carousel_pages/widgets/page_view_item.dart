@@ -30,9 +30,9 @@ class PageViewItem extends StatelessWidget {
             title,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontSize: width / 13,
-              fontWeight: FontWeight.w600,
-            ),
+                  fontSize: width / 13,
+                  fontWeight: FontWeight.w600,
+                ),
           ),
         ),
       ],

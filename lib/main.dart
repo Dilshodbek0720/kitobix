@@ -1,19 +1,22 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitobix/cubits/auth/auth_cubit.dart';
+import 'package:kitobix/cubits/tab/tab_cubit.dart';
 import 'package:kitobix/data/local/storage_repository.dart';
 import 'package:kitobix/data/repositories/auth_repository.dart';
+import 'package:kitobix/firebase_options.dart';
 import 'package:kitobix/presentation/app_routes.dart';
 import 'package:kitobix/utils/size/screen_size.dart';
 import 'package:kitobix/utils/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await StorageRepository.getInstance();
   runApp(const App());
 }
@@ -35,6 +38,9 @@ class App extends StatelessWidget {
             create: (context) => AuthCubit(
               context.read<AuthRepository>(),
             ),
+          ),
+          BlocProvider(
+            create: (context) => TabCubit(),
           ),
         ],
         child: const MyApp(),

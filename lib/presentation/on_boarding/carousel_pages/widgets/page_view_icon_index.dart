@@ -19,57 +19,69 @@ class PageIndexItem extends StatelessWidget {
       children: [
         activePageIndex == 0
             ? Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.primary50 : AppColors.accent50,
-            borderRadius: BorderRadius.circular(100),
-          ),
-        )
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.primary50
+                      : AppColors.accent50,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              )
             : Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.neutral80 : AppColors.primary40,
-            borderRadius: BorderRadius.circular(100),
-          ),
-        ),
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.neutral80
+                      : AppColors.primary40,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
         SizedBox(width: width / 80),
         activePageIndex == 1
             ? Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.primary50 : AppColors.accent50,
-            borderRadius: BorderRadius.circular(100.r),
-          ),
-        )
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.primary50
+                      : AppColors.accent50,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+              )
             : Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.neutral80 : AppColors.primary40,
-            borderRadius: BorderRadius.circular(100.r),
-          ),
-        ),
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.neutral80
+                      : AppColors.primary40,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+              ),
         SizedBox(width: width / 80),
         activePageIndex == 2
             ? Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.primary50 : AppColors.accent50,
-            borderRadius: BorderRadius.circular(100.r),
-          ),
-        )
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.primary50
+                      : AppColors.accent50,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+              )
             : Container(
-          height: 12.w,
-          width: 12.w,
-          decoration: BoxDecoration(
-            color: getTheme(context) ? AppColors.neutral80 : AppColors.primary40,
-            borderRadius: BorderRadius.circular(100.r),
-          ),
-        ),
+                height: 12.w,
+                width: 12.w,
+                decoration: BoxDecoration(
+                  color: getTheme(context)
+                      ? AppColors.neutral80
+                      : AppColors.primary40,
+                  borderRadius: BorderRadius.circular(100.r),
+                ),
+              ),
       ],
     );
   }

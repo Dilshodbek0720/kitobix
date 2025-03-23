@@ -93,5 +93,4 @@ class StorageRepository {
     if (_preferences == null) return null;
     return _preferences!.remove(key);
   }
-
 }

@@ -8,7 +8,6 @@ class AuthTextField extends StatefulWidget {
   const AuthTextField({
     super.key,
     required this.hintText,
-    // required this.prefixIcon,
     this.isPassword = false,
     required this.onChanged,
     required this.focusNode,
@@ -17,8 +16,6 @@ class AuthTextField extends StatefulWidget {
 
   final String hintText;
   final String? parolkoz;
-
-  // final String prefixIcon;
   final FocusNode focusNode;
   final bool isPassword;
   final ValueChanged<String> onChanged;

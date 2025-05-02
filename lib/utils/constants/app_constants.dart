@@ -6,5 +6,5 @@ class AppConstants {
 class FirebaseCollections {
   static const String orders = "orders";
   static const String users = "clients";
-  static const String coffees = "books";
+  static const String books = "books";
 }

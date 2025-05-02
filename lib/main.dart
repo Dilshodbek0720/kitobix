@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitobix/cubits/auth/auth_cubit.dart';
+import 'package:kitobix/cubits/book/book_cubit.dart';
 import 'package:kitobix/cubits/tab/tab_cubit.dart';
 import 'package:kitobix/data/local/storage_repository.dart';
 import 'package:kitobix/data/repositories/auth_repository.dart';
+import 'package:kitobix/data/repositories/book_repository.dart';
 import 'package:kitobix/firebase_options.dart';
 import 'package:kitobix/presentation/app_routes.dart';
 import 'package:kitobix/utils/size/screen_size.dart';
@@ -28,19 +30,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider(
-          create: (context) => AuthRepository(),
-        ),
+        RepositoryProvider(create: (context) => AuthRepository()),
+        RepositoryProvider(create: (context) => BookRepository())
       ],
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => AuthCubit(
-              context.read<AuthRepository>(),
-            ),
+            create: (context) => AuthCubit(context.read<AuthRepository>()),
           ),
+          BlocProvider(create: (context) => TabCubit()),
           BlocProvider(
-            create: (context) => TabCubit(),
+            create: (context) => BookCubit(
+              bookRepository: context.read<BookRepository>(),
+            ),
           ),
         ],
         child: const MyApp(),

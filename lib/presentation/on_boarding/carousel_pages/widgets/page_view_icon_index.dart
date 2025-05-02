@@ -23,7 +23,7 @@ class PageIndexItem extends StatelessWidget {
                 width: 12.w,
                 decoration: BoxDecoration(
                   color: getTheme(context)
-                      ? AppColors.primary50
+                      ? AppColors.primary500
                       : AppColors.accent50,
                   borderRadius: BorderRadius.circular(100),
                 ),
@@ -34,7 +34,7 @@ class PageIndexItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: getTheme(context)
                       ? AppColors.neutral80
-                      : AppColors.primary40,
+                      : AppColors.uzum600,
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
@@ -45,7 +45,7 @@ class PageIndexItem extends StatelessWidget {
                 width: 12.w,
                 decoration: BoxDecoration(
                   color: getTheme(context)
-                      ? AppColors.primary50
+                      ? AppColors.primary500
                       : AppColors.accent50,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
@@ -56,7 +56,7 @@ class PageIndexItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: getTheme(context)
                       ? AppColors.neutral80
-                      : AppColors.primary40,
+                      : AppColors.uzum600,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
               ),
@@ -67,7 +67,7 @@ class PageIndexItem extends StatelessWidget {
                 width: 12.w,
                 decoration: BoxDecoration(
                   color: getTheme(context)
-                      ? AppColors.primary50
+                      ? AppColors.primary500
                       : AppColors.accent50,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
@@ -78,7 +78,7 @@ class PageIndexItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: getTheme(context)
                       ? AppColors.neutral80
-                      : AppColors.primary40,
+                      : AppColors.uzum600,
                   borderRadius: BorderRadius.circular(100.r),
                 ),
               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kitobix/presentation/widgets/global_button.dart';
+import 'package:kitobix/presentation/widgets/buttons/global_button.dart';
 import 'package:kitobix/utils/size/size_extension.dart';
 import '../colors/app_colors.dart';
 import '../size/screen_size.dart';
@@ -33,14 +33,11 @@ void showErrorMessage({
                 ),
               ),
               16.ph,
-              SizedBox(
-                height: 50,
-                child: GlobalButton(
-                  title: 'OK',
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
+              GlobalButton(
+                title: 'OK',
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),

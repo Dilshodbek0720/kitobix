@@ -1,28 +1,7 @@
 import '../../data/models/icon/icon_type.dart';
 
 class AppIcons {
-  //fake images of drivers
-  static const String drFake1 = "assets/images/fake_images/dr_fake1.png";
-  static const String drFake2 = "assets/images/fake_images/dr_fake2.png";
-  static const String drFake3 = "assets/images/fake_images/dr_fake3.png";
-  static const String drFake4 = "assets/images/fake_images/dr_fake4.png";
-  static const String drFake5 = "assets/images/fake_images/dr_fake5.png";
-
   // images
-
-  static const String myLocation = "assets/images/my_location.png";
-  static const String eReceipt = "assets/images/e_receipt.png";
-  static const String eReceiptDark = "assets/images/e_receipt_dark.png";
-  static const String taxiLogotip = "assets/images/taxi_logotip.png";
-  static const String mapAtBooking = "assets/images/map_at_booking.png";
-  static const String emptyBookings = "assets/images/empty_bookings.png";
-  static const String emptyBookingsDark =
-      "assets/images/empty_bookings_dark.png";
-  static const String testAvatar = "assets/images/test_avatar.png";
-  static const String barcode = "assets/images/barcode.png";
-  static const String emptyProfile = "assets/images/empty_profile.png";
-  static const String enterPassword = "assets/images/enter_password.png";
-  static const String fingerPrint = "assets/images/finger_print.png";
   static const String onBoarding1 = "assets/images/on_boarding1.png";
   static const String onBoarding2 = "assets/images/on_boarding2.png";
   static const String onBoarding3 = "assets/images/on_boarding3.png";
@@ -34,13 +13,10 @@ class AppIcons {
   static const String searchNotFound = "assets/images/search_not_found.png";
   static const String signIn = "assets/images/sign_in.png";
   static const String splashScreen = "assets/images/splash_screen.png";
-  static const String successPassword = "assets/images/success_password.png";
   static const String bookLogo = "assets/images/book_logo.png";
-  static const String uzbFlag = "assets/images/uzb.png";
-  static const String fromTo = "assets/images/from_to.png";
-  static const String humoPng = "assets/images/humo_card.png";
-  static const String uzCardPng = "assets/images/uzCard_card.png";
-  static const String uzbFlagCarNumber = "assets/images/uzb2.png";
+  static const String audioBooks = "assets/images/audio_books.png";
+  static const String recommend = "assets/images/recommend.png";
+
   static const String createNewPasswordDialog =
       "assets/images/create_new_password_dialog.png";
   static const String forgotPasswordDarkImage =
@@ -50,30 +26,12 @@ class AppIcons {
   static const String locationInSearchDb =
       "assets/images/location_in_search.png";
 
-  // smile images
-  static const String smileAngry = "assets/images/mood/smile_angry.png";
-  static const String smileCry = "assets/images/mood/smile_cry.png";
-  static const String smileExcited = "assets/images/mood/smile_excited.png";
-  static const String smileEyeGlass = "assets/images/mood/smile_eye_glass.png";
-  static const String smileHappy = "assets/images/mood/smile_happy.png";
-  static const String smileQuiet = "assets/images/mood/smile_quiet.png";
-  static const String smileTired = "assets/images/mood/smile_tired.png";
-  static const String smileUnhappy = "assets/images/mood/smile_unhappy.png";
-  static const String smileVeryHappy =
-      "assets/images/mood/smile_very_happy.png";
-
   static String getSvg({required String name, IconType? iconType}) {
     if (iconType != null) {
       return "assets/svg/${iconType.name}/${name.substring(name.lastIndexOf("/") + 1, name.indexOf("."))}.svg";
     }
     return name;
   }
-
-  // map types images
-  static const String hybrid = "assets/images/map_types/hybrid.png";
-  static const String normal = "assets/images/map_types/normal.png";
-  static const String satellite = "assets/images/map_types/satellite.png";
-  static const String terrain = "assets/images/map_types/terrain.png";
 
   // svg
   static IconType it = IconType.lightOutline;

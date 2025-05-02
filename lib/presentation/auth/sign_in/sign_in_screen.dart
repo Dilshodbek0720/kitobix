@@ -13,7 +13,7 @@ import 'package:kitobix/presentation/auth/widgets/auth_text_field.dart';
 import 'package:kitobix/presentation/auth/widgets/custom_appbar.dart';
 import 'package:kitobix/presentation/auth/widgets/network_auth_button.dart';
 import 'package:kitobix/presentation/auth/widgets/text_widget.dart';
-import 'package:kitobix/presentation/widgets/global_button.dart';
+import 'package:kitobix/presentation/widgets/buttons/global_button.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
 import 'package:kitobix/utils/constants/storage_keys.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
@@ -159,7 +159,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 color: AppColors.primary50,
                 textColor: AppColors.white,
                 title: "Login",
-                radius: 8,
                 onTap: () {
                   context.read<AuthCubit>().logIn(context);
                   // successDialog(context: context, title: "Sign in Successful!", image: AppIcons.success, onTap: (){ },text: "Please wait...\nYou will be directed to the homepage.");
@@ -174,6 +173,9 @@ class _SignInScreenState extends State<SignInScreen> {
               StorageKeys.userId,
               FirebaseAuth.instance.currentUser?.uid ?? "",
             );
+            if (context.mounted) {
+              Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+            }
           } else if (state.status == FormStatus.failure) {
             showErrorMessage(message: state.statusMessage, context: context);
           }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:kitobix/presentation/widgets/buttons/global_button.dart';
 import 'package:kitobix/utils/size/size_extension.dart';
 import '../colors/app_colors.dart';
@@ -91,5 +92,17 @@ Future<void> showConfirmMessage({
         );
       },
     ),
+  );
+}
+
+Future<bool?> showToastMessage(String message) {
+  return Fluttertoast.showToast(
+    msg: message,
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.BOTTOM,
+    timeInSecForIosWeb: 1,
+    backgroundColor: Colors.grey,
+    textColor: Colors.black,
+    fontSize: 16,
   );
 }

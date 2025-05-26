@@ -10,29 +10,32 @@ class SeeAllItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+          ),
+          const Spacer(),
+          TextButton(
+            onPressed: onTap,
+            child: Text(
+              'Hammasi',
+              style: TextStyle(
+                fontFamily: "Urbanist",
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors.primary50,
               ),
-        ),
-        const Spacer(),
-        TextButton(
-          onPressed: onTap,
-          child: Text(
-            'See All',
-            style: TextStyle(
-              fontFamily: "Urbanist",
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.primary50,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

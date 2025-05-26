@@ -61,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             )
                           ],
                         ),
-                        const TextWidget(title: "Register"),
+                        const TextWidget(title: "Ro‘yxatdan o‘tish"),
                         16.ph,
                         AuthTextField(
                           hintText: "Email",
@@ -80,11 +80,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         28.ph,
                         AuthNavigatorButton(
-                            title: "Don’t have an account?",
+                            title: "Hisobingiz yo‘qmi?",
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            onTapTitle: "Sign in"),
+                            onTapTitle: "Kirish"),
                         // const Spacer(),
                       ],
                     ),
@@ -100,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: GlobalButton(
                     color: AppColors.primary50,
                     textColor: AppColors.white,
-                    title: "Register",
+                    title: "Ro‘yxatdan o‘tish",
                     onTap: () {
                       context.read<AuthCubit>().signUp(context);
                     }),

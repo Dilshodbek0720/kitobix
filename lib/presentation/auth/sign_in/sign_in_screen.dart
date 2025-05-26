@@ -7,6 +7,7 @@ import 'package:kitobix/cubits/auth/auth_cubit.dart';
 import 'package:kitobix/data/local/storage_repository.dart'
     show StorageRepository;
 import 'package:kitobix/data/models/form/form_status.dart';
+import 'package:kitobix/data/repositories/auth_repository.dart';
 import 'package:kitobix/presentation/app_routes.dart';
 import 'package:kitobix/presentation/auth/widgets/auth_navigation_button.dart';
 import 'package:kitobix/presentation/auth/widgets/auth_text_field.dart';
@@ -63,7 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           )
                         ],
                       ),
-                      const TextWidget(title: "Login to Your Account"),
+                      const TextWidget(title: "Hisobingizga kirish"),
                       16.ph,
                       AuthTextField(
                         hintText: "Email",
@@ -89,7 +90,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               // Navigator.pushNamed(context, RouteNames.resetPassword);
                             },
                             child: Text(
-                              "Forgot password?",
+                              "Parolni unutdingizmi?",
                               style: TextStyle(
                                 color: AppColors.black,
                                 fontFamily: "Urbanist",
@@ -105,7 +106,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       28.ph,
                       Center(
                         child: Text(
-                          "Or login with",
+                          "Yoki quyidagilar orqali kiring",
                           style: TextStyle(
                             color: AppColors.neutral80,
                             fontFamily: "Urbanist",
@@ -122,7 +123,11 @@ class _SignInScreenState extends State<SignInScreen> {
                         children: [
                           NetworkAuthButton(
                               icon: SvgPicture.asset(AppIcons.google),
-                              onTap: () {}),
+                              onTap: () {
+                                context
+                                    .read<AuthRepository>()
+                                    .signInWithGoogle();
+                              }),
                           NetworkAuthButton(
                               icon: SvgPicture.asset(AppIcons.facebook),
                               onTap: () {}),
@@ -137,12 +142,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       24.ph,
                       AuthNavigatorButton(
-                          title: "Don’t have an account?",
+                          title: "Hisobingiz yo‘qmi?",
                           onTap: () {
                             Navigator.pushNamed(
                                 context, RouteNames.signUpScreen);
                           },
-                          onTapTitle: "Sign up"),
+                          onTapTitle: "Ro‘yxatdan o‘tish"),
                       // const Spacer(),
                     ],
                   ),
@@ -158,7 +163,7 @@ class _SignInScreenState extends State<SignInScreen> {
               child: GlobalButton(
                 color: AppColors.primary50,
                 textColor: AppColors.white,
-                title: "Login",
+                title: "Kirish",
                 onTap: () {
                   context.read<AuthCubit>().logIn(context);
                   // successDialog(context: context, title: "Sign in Successful!", image: AppIcons.success, onTap: (){ },text: "Please wait...\nYou will be directed to the homepage.");

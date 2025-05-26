@@ -32,40 +32,41 @@ class _TabBoxState extends State<TabBox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: IndexedStack(
-          index: context.watch<TabCubit>().state,
-          children: screens,
+      body: IndexedStack(
+        index: context.watch<TabCubit>().state,
+        children: screens,
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16.r),
+          topRight: Radius.circular(16.r),
         ),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16.r),
-            topRight: Radius.circular(16.r),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedLabelStyle: const TextStyle(
+            fontFamily: "Urbanist",
+            fontSize: 10,
+            fontWeight: FontWeight.w700,
+            color: AppColors.primary,
+            height: 12 / 10,
           ),
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            selectedLabelStyle: const TextStyle(
-              fontFamily: "Urbanist",
-              fontSize: 10,
-              fontWeight: FontWeight.w700,
-              color: AppColors.primary,
-              height: 12 / 10,
-            ),
-            unselectedLabelStyle: const TextStyle(
-              fontFamily: "Urbanist",
-              fontSize: 10,
-              fontWeight: FontWeight.w500,
-              color: AppColors.c_500,
-              height: 12 / 10,
-            ),
-            items: <BottomNavigationBarItem>[
-              _getItem(icon: AppIcons.home, label: 'Home'),
-              _getItem(icon: AppIcons.search, label: 'Search'),
-              _getItem(icon: AppIcons.document, label: 'Library'),
-            ],
-            currentIndex: context.watch<TabCubit>().state,
-            onTap: context.read<TabCubit>().changeTabIndex,
+          unselectedLabelStyle: const TextStyle(
+            fontFamily: "Urbanist",
+            fontSize: 10,
+            fontWeight: FontWeight.w500,
+            color: AppColors.c_500,
+            height: 12 / 10,
           ),
-        ));
+          items: <BottomNavigationBarItem>[
+            _getItem(icon: AppIcons.home, label: 'Asosiy'),
+            _getItem(icon: AppIcons.search, label: 'Izlash'),
+            _getItem(icon: AppIcons.document, label: 'Kutubxona'),
+          ],
+          currentIndex: context.watch<TabCubit>().state,
+          onTap: context.read<TabCubit>().changeTabIndex,
+        ),
+      ),
+    );
   }
 
   BottomNavigationBarItem _getItem({

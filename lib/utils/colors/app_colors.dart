@@ -18,7 +18,7 @@ class AppColors {
   static const slate900 = Color(0xff343a46);
   static const slate950 = Color(0xff23272e);
 
-  static const primary50 = Color(0xffeff4ff);
+  static const primary50 = Color(0xff4838D1);
   static const primary100 = Color(0xffdbe6fe);
   static const primary200 = Color(0xffbfd3fe);
   static const primary300 = Color(0xff93b4fd);
@@ -136,6 +136,6 @@ class AppColors {
   static const Color disabled = Color(0xFFD8D8D8);
   static const Color disabledButton = Color(0xFFEBAD18);
 
-  static const Color primary = Color(0xFFFEBB1B);
-  static const Color secondary = Color(0xFFFFD300);
+  static const Color primary = Color(0xFF4838D1);
+  static const Color secondary = Color(0xFF421d95);
 }

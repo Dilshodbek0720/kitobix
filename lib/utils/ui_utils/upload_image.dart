@@ -1,17 +1,19 @@
 import 'dart:io';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kitobix/data/models/universal_data/universal_data.dart';
+import 'package:kitobix/main.dart';
 
 Future<UniversalData> imageUploader(XFile xFile) async {
-  String downloadUrl = "";
   try {
-    final storageRef = FirebaseStorage.instance.ref();
-    var imageRef = storageRef.child("images/${xFile.name}");
-    await imageRef.putFile(File(xFile.path));
-    downloadUrl = await imageRef.getDownloadURL();
+    final fileName = "${DateTime.now().millisecondsSinceEpoch}_${xFile.name}";
 
-    return UniversalData(data: downloadUrl);
+    final file = File(xFile.path);
+    await supabase.storage.from('images').upload('public/$fileName', file);
+
+    final publicUrl =
+        supabase.storage.from('images').getPublicUrl('public/$fileName');
+
+    return UniversalData(data: publicUrl);
   } catch (error) {
     return UniversalData(error: error.toString());
   }

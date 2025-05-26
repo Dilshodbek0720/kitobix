@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kitobix/core/extension/theme_extensions.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
 import 'package:kitobix/utils/theme/custom_text_style.dart';
 
@@ -13,6 +12,7 @@ class CustomIconButton extends StatelessWidget {
     this.height = 36,
     this.bgColor,
     this.iconColor,
+    this.textColor,
     this.isRounded = false,
     this.isDisabled = false,
     this.borderRadius = 12,
@@ -25,6 +25,7 @@ class CustomIconButton extends StatelessWidget {
   final double height;
   final Color? bgColor;
   final Color? iconColor;
+  final Color? textColor;
   final bool isRounded;
   final bool isDisabled;
   final double borderRadius;
@@ -67,13 +68,9 @@ class CustomIconButton extends StatelessWidget {
                         const SizedBox(width: 6),
                         Text(
                           title,
-                          style: CustomTextStyle.bodySmall(
+                          style: CustomTextStyle.labelSmall(
                             context,
-                            color: bgColor != null
-                                ? AppColors.white
-                                : (context.isDark()
-                                    ? AppColors.white
-                                    : AppColors.black),
+                            color: textColor,
                           ),
                         )
                       ],

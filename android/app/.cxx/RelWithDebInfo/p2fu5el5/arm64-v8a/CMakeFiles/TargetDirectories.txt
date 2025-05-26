@@ -1,0 +1,2 @@
+/Users/dilshodbek/StudioProjects/kitobix/android/app/.cxx/RelWithDebInfo/p2fu5el5/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/dilshodbek/StudioProjects/kitobix/android/app/.cxx/RelWithDebInfo/p2fu5el5/arm64-v8a/CMakeFiles/rebuild_cache.dir

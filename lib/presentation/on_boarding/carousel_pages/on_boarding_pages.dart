@@ -28,7 +28,10 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
           SizedBox(
             height: height,
             width: width,
-            child: Image.asset(AppIcons.onBoardingBackground),
+            child: Image.asset(
+              AppIcons.onBoardingBackground,
+              fit: BoxFit.cover,
+            ),
           ),
           Column(
             children: [
@@ -48,7 +51,7 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
                       img: AppIcons.onBoarding1,
                     ),
                     PageViewItem(
-                      title: "Yangidan yangi kitoblar!",
+                      title: "Ajoyib kitoblar sizni kutmoqda!",
                       img: AppIcons.onBoarding2,
                     ),
                     PageViewItem(
@@ -67,7 +70,7 @@ class _OnBoardingPagesState extends State<OnBoardingPages> {
                 ),
                 child: GlobalButton(
                   color: AppColors.primary50,
-                  title: pageIndex != 2 ? "Next" : "Lets Get Started",
+                  title: pageIndex != 2 ? "Keyingi" : "Boshlash",
                   textColor: AppColors.white,
                   onTap: () async {
                     if (pageIndex < 2) {

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,9 +12,11 @@ import 'package:kitobix/data/models/form/form_status.dart';
 import 'package:kitobix/data/models/universal_data/universal_data.dart';
 import 'package:kitobix/presentation/widgets/buttons/global_button.dart';
 import 'package:kitobix/presentation/widgets/inputs/text_input_view.dart';
+import 'package:kitobix/presentation/widgets/painter/dashed_border_painter.dart';
 import 'package:kitobix/utils/colors/app_colors.dart';
 import 'package:kitobix/utils/icons/app_icons.dart';
 import 'package:kitobix/utils/size/size_extension.dart';
+import 'package:kitobix/utils/theme/custom_text_style.dart';
 import 'package:kitobix/utils/ui_utils/loading_dialog.dart';
 import 'package:kitobix/utils/ui_utils/show_error_message.dart';
 import 'package:kitobix/utils/ui_utils/upload_image.dart';
@@ -31,8 +34,11 @@ class AddBookScreen extends StatefulWidget {
 class _AddBookScreenState extends State<AddBookScreen> {
   ImagePicker picker = ImagePicker();
   String image = "";
+  String file = "";
   TextEditingController nameController = TextEditingController();
+  TextEditingController authorController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+  TextEditingController audioController = TextEditingController();
   TextEditingController typeController = TextEditingController();
   TextEditingController rateController = TextEditingController();
 
@@ -40,8 +46,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
   void initState() {
     if (widget.bookModel != null) {
       image = widget.bookModel!.image;
+      file = widget.bookModel!.file;
       nameController.text = widget.bookModel!.name;
+      authorController.text = widget.bookModel!.author;
       descriptionController.text = widget.bookModel!.description;
+      audioController.text = widget.bookModel!.audio;
       typeController.text = widget.bookModel!.type;
       rateController.text = widget.bookModel!.rate;
     }
@@ -96,6 +105,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
                     controller: nameController,
                   ),
                   TextInputView(
+                    caption: "Author",
+                    hintText: "Author",
+                    controller: authorController,
+                  ),
+                  TextInputView(
                     caption: "Description",
                     hintText: "Description",
                     controller: descriptionController,
@@ -109,6 +123,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
                     caption: "Rate of book",
                     hintText: "Rate of book",
                     controller: rateController,
+                  ),
+                  TextInputView(
+                    caption: "Audio link",
+                    hintText: "Audio link",
+                    controller: audioController,
                   ),
                   TextButton(
                     onPressed: () {
@@ -147,24 +166,102 @@ class _AddBookScreenState extends State<AddBookScreen> {
                           ),
                         )
                       : const SizedBox(),
+                  CustomPaint(
+                    painter: DashedBorderPainter(
+                      color: AppColors.slate300,
+                      borderRadius: 14,
+                    ),
+                    child: GestureDetector(
+                      onTap: () async {
+                        final result = await FilePicker.platform.pickFiles();
+
+                        if (result != null) {
+                          XFile xFile = XFile(result.files.single.path!);
+                          UniversalData data = await imageUploader(xFile);
+                          setState(() {
+                            file = data.data as String;
+                          });
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: AppColors.slate50,
+                        ),
+                        width: double.infinity,
+                        height: 152,
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            spacing: 8.0,
+                            children: [
+                              file.isNotEmpty
+                                  ? Text(
+                                      "Fayl tanlandi!",
+                                      style: CustomTextStyle.labelMedium(
+                                        context,
+                                        color: AppColors.primary500,
+                                      ),
+                                    )
+                                  : const SizedBox(),
+                              SvgPicture.asset(AppIcons.upload),
+                              Builder(
+                                builder: (context) {
+                                  return Text.rich(
+                                    TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "Tanlay oladigan fayl turi: ",
+                                          style: CustomTextStyle.labelMedium(
+                                            context,
+                                            color: AppColors.slate300,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: "PDF",
+                                          style: CustomTextStyle.labelMedium(
+                                            context,
+                                            color: AppColors.primary500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   GlobalButton(
                     title:
                         widget.bookModel == null ? "Add Book" : "Update Book",
+                    textColor: AppColors.white,
                     onTap: () {
                       if (image.isNotEmpty &&
+                          file.isNotEmpty &&
                           nameController.text.isNotEmpty &&
+                          authorController.text.isNotEmpty &&
                           descriptionController.text.isNotEmpty &&
+                          audioController.text.isNotEmpty &&
                           typeController.text.isNotEmpty &&
                           rateController.text.isNotEmpty) {
                         if (widget.bookModel == null) {
                           context.read<BookCubit>().updateModel(
                                 bookModel: BookModel(
-                                    bookId: '',
-                                    type: typeController.text,
-                                    rate: rateController.text,
-                                    name: nameController.text,
-                                    description: descriptionController.text,
-                                    image: image),
+                                  bookId: '',
+                                  type: typeController.text,
+                                  rate: rateController.text,
+                                  name: nameController.text,
+                                  author: authorController.text,
+                                  description: descriptionController.text,
+                                  audio: audioController.text,
+                                  image: image,
+                                  file: file,
+                                ),
                               );
                           context.read<BookCubit>().addBook();
                         } else {
@@ -174,8 +271,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
                                   type: typeController.text,
                                   rate: rateController.text,
                                   name: nameController.text,
+                                  author: authorController.text,
                                   description: descriptionController.text,
+                                  audio: audioController.text,
                                   image: image,
+                                  file: file,
                                 ),
                               );
                           context.read<BookCubit>().updateBook();
@@ -212,7 +312,7 @@ class _AddBookScreenState extends State<AddBookScreen> {
       builder: (BuildContext context) {
         return Container(
           padding: const EdgeInsets.all(24),
-          height: 200,
+          height: 180,
           decoration: const BoxDecoration(
             color: AppColors.slate50,
             borderRadius: BorderRadius.only(
@@ -229,11 +329,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
                 },
                 leading: const Icon(
                   Icons.camera_alt,
-                  color: Colors.white,
+                  color: AppColors.slate800,
                 ),
-                title: const Text(
+                title: Text(
                   "Select from Camera",
-                  style: TextStyle(color: Colors.white),
+                  style: CustomTextStyle.labelMedium(context),
                 ),
               ),
               ListTile(
@@ -243,11 +343,11 @@ class _AddBookScreenState extends State<AddBookScreen> {
                 },
                 leading: const Icon(
                   Icons.photo,
-                  color: Colors.white,
+                  color: AppColors.slate800,
                 ),
-                title: const Text(
+                title: Text(
                   "Select from Gallery",
-                  style: TextStyle(color: Colors.white),
+                  style: CustomTextStyle.labelMedium(context),
                 ),
               )
             ],

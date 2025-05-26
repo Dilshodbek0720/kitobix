@@ -15,10 +15,13 @@ class BookCubit extends Cubit<BookState> {
             bookModel: BookModel(
               bookId: '',
               name: '',
+              author: '',
               type: '',
               description: '',
               rate: '',
               image: '',
+              file: '',
+              audio: '',
             ),
             status: FormStatus.pure,
           ),

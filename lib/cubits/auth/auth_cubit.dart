@@ -13,6 +13,21 @@ class AuthCubit extends Cubit<AuthState> {
 
   final AuthRepository authRepository;
 
+  Future<void> logOutUser() async {
+    emit(state.copyWith(status: FormStatus.loading));
+    UniversalData data = await authRepository.logOutUser();
+    if (data.error.isEmpty) {
+      emit(state.copyWith(status: FormStatus.unauthenticated));
+    } else {
+      emit(
+        state.copyWith(
+          status: FormStatus.failure,
+          statusMessage: data.error,
+        ),
+      );
+    }
+  }
+
   Future<void> signUp(context) async {
     emit(state.copyWith(status: FormStatus.loading));
     showLoading(context: context);
@@ -42,6 +57,22 @@ class AuthCubit extends Cubit<AuthState> {
       password: state.password,
     );
     hideLoading(context: context);
+    if (data.error.isEmpty) {
+      emit(state.copyWith(status: FormStatus.authenticated));
+    } else {
+      emit(
+        state.copyWith(
+          status: FormStatus.failure,
+          statusMessage: data.error,
+        ),
+      );
+    }
+    emit(state.copyWith(status: FormStatus.pure));
+  }
+
+  Future<void> signInWithGoogle(context) async {
+    emit(state.copyWith(status: FormStatus.loading));
+    UniversalData data = await authRepository.signInWithGoogle();
     if (data.error.isEmpty) {
       emit(state.copyWith(status: FormStatus.authenticated));
     } else {
